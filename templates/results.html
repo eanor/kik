@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Средний возраст</td>
+            <td>{{ all_info['age_mean'] }}</td>
+        </tr>
+        <tr>
+            <td>Минимальный возраст</td>
+            <td>{{ all_info['age_min'] }}</td>
+        </tr>
+        <tr>
+            <td>Максимальный возраст</td>
+            <td>{{ all_info['age_max'] }}</td>
+        </tr>
+        <tr>
+            <td>На кого больше всего похожи: </td>
+            <td>{{ all_info['most_popq1'] }}</td>
+        </tr>
+        <tr>
+            <td>Каким смешариком больше всего хотели быть в детстве: </td>
+            <td>{{ all_info['most_popq2'] }}</td>
+        </tr>
+        <tr>
+            <td>Самый популярный смешарик :))): </td>
+            <td>{{ all_info['most_popq3'] }}</td>
+        </tr>
+        <tr>
+            <td>Самый непопулярный смешарик  :(((: </td>
+            <td>{{ all_info['most_popq4'] }}</td>
+        </tr>
+    </table>
+</body>
+</html>

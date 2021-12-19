@@ -1,0 +1,138 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			html {
+  font-family: sans-serif;
+}
+
+div:first-of-type {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 5px;
+}
+
+label {
+  margin-right: 15px;
+  line-height: 32px;
+}
+
+input:radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+
+  position: relative;
+  top: 4px;
+}
+
+input:checked {
+  border: 6px solid black;
+}
+
+button,
+legend {
+  color: white;
+  background-color: black;
+  padding: 20px 40px;
+  border-radius: 0;
+  border: 0;
+  font-size: 14px;
+}
+
+button:hover,
+button:focus {
+  color: #999;
+}
+
+button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
+}
+
+		</style>
+	</head>
+	<body>
+		<h2>Очень важный опрос</h2>
+		<form class="container" action="/process">
+			<h4>Анкета информанта</h4>
+			<div class="row">
+				<div class="col-md-4">Возраст</div>
+				<div class="col-md-4"><input type="number" name="age" size="10"></div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Гендер</div>
+				<select name="gender" class="col-md-4">
+					<option value="male">м</option>
+					<option value="female">ж</option>
+					<option value="other">другой</option>
+				</select>
+			</div>
+			<div class="row">
+				<div class="col-md-4">Уровень образования</div>
+				<select name="education" class="col-md-4">
+					<option value="kindergarten">детский сад</option>
+					<option value="school_9">9 классов школы</option>
+					<option value="school_11">11 классов школы</option>
+					<option value="college">среднее специальное</option>
+					<option value="student">неоконченное высшее</option>
+					<option value="bachelor">бакалавриат/специалитет</option>
+					<option value="master">магистратура</option>
+					<option value="phd">аспирантура</option>
+					<option value="candidate">кандидат наук</option>
+					<option value="doctor">доктор наук</option>
+				</select>
+			</div>
+			<h2>Вопросы</h2>
+            {% for question in questions %}
+			    <div class="row">
+				    <p class="col-md-6">{{question.text}}</p>
+					<table class="col-md-8">
+						<tr>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Копатыч'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Совунья'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value=Лосяш></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Ёжик'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Крош'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Кар-Карыч'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Нюша'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Бараш'></td>
+							<td><input class="radio" type="radio" name="q{{ question.id }}" size="5" value='Пин'></td>
+						</tr>
+						<tr>
+							<td>Копатыч</td>
+							<td>Совунья</td>
+							<td>Лосяш</td>
+							<td>Ёжик</td>
+							<td>Крош</td>
+							<td>Кар-Карыч</td>
+							<td>Нюша</td>
+							<td>Бараш</td>
+							<td>Пин</td>
+						</tr>
+					</table>
+			    </div>
+            {% endfor %}
+			<div class="row">
+				<button type="submit">От Винта!</button>
+			</div>
+
+			<p></p>
+
+			<p><Img src="https://trikky.ru/wp-content/blogs.dir/1/files/2020/04/28/2020-04-28-21-22-30.jpg" Width="800" Height="600"></p>
+
+		</form>
+	</body>
+</html>
